@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 5005 ;
 const express =require('express');
 const mustacheexpress = require('mustache-express');
 var session = require('express-session');
@@ -679,6 +680,6 @@ app.get('/Kids/Serene-Kids-Bedroom-Interior-Design',(request,response)=>{
 app.get('/Kids/Perky-Kids-Bedroom-Design',(request,response)=>{
     response.render('Perky Kids Bedroom Design');
 })
-app.listen(5005,()=>{
-    console.log('Listening to the server 5005');
+app.listen(PORT,()=>{
+    console.log('Listening');
 })
