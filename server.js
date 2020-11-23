@@ -33,11 +33,10 @@ app.get('/login',(request,response)=>{
 })
 app.get('/',(request,response)=>{
     const client = new Client({
-        user:'postgres',
-        host: 'localhost',
-        database: 'my_project',
-        password: '8235983451',
-        port: 5432,
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
 
     });
     client.connect()
@@ -110,11 +109,10 @@ app.get('/admin-activity',(request,response)=>{
 app.post('/appointment/add',(request,response)=>{
     console.log('post body',request.body);
     const client = new Client({
-        user: 'postgres',
-        host: 'localhost',
-        database: 'my_project',
-        password: '8235983451',
-        port: 5432
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     });
     client.connect()
     .then(()=>{
@@ -135,11 +133,10 @@ app.post('/thanks/add', async function (req, res) {
 		
     try{
         const client = new Client({
-                 user: 'postgres',
-                   host: 'localhost',
-                   database: 'my_project',
-                   password: '8235983451',
-                   port: 5432
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+              rejectUnauthorized: false
+            }
                 });
       client.connect()
         await JSON.stringify(client.query('SELECT customerid FROM "bookonline" WHERE "email"=$1', [req.body.email], function(err, result) {
@@ -169,11 +166,10 @@ app.post('/thanks/add', async function (req, res) {
 });
 app.get('/list',(request,response)=>{
     const client = new Client({
-        user:'postgres',
-        host: 'localhost',
-        database: 'my_project',
-        password: '8235983451',
-        port: 5432,
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
 
     });
     client.connect()
@@ -189,11 +185,10 @@ app.get('/list',(request,response)=>{
     });
     app.get('/admin-dashboard',(request,response)=>{
         const client = new Client({
-            user:'postgres',
-            host: 'localhost',
-            database: 'my_project',
-            password: '8235983451',
-            port: 5432,
+            connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     
         });
         client.connect()
@@ -209,11 +204,10 @@ app.get('/list',(request,response)=>{
         });
         app.get('/Appointment-list',(request,response)=>{
             const client = new Client({
-                user:'postgres',
-                host: 'localhost',
-                database: 'my_project',
-                password: '8235983451',
-                port: 5432,
+                connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
         
             });
             client.connect()
@@ -229,11 +223,10 @@ app.get('/list',(request,response)=>{
             });
             app.get('/Appointment-list2',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                    host: 'localhost',
-                    database: 'my_project',
-                    password: '8235983451',
-                    port: 5432,
+                    connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
             
                 });
                 client.connect()
@@ -249,11 +242,10 @@ app.get('/list',(request,response)=>{
                 });
         app.get('/register-list',(request,response)=>{
             const client = new Client({
-                user:'postgres',
-                host: 'localhost',
-                database: 'my_project',
-                password: '8235983451',
-                port: 5432,
+                connectionString: process.env.DATABASE_URL,
+                ssl: {
+                  rejectUnauthorized: false
+                }
         
             });
             client.connect()
@@ -269,11 +261,10 @@ app.get('/list',(request,response)=>{
             });
             app.post('/records/delete/:id',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                host: 'localhost',
-                database: 'my_project',
-                password: '8235983451',
-                port: 5432,
+                    connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
         
             
                 });
@@ -291,11 +282,10 @@ app.get('/list',(request,response)=>{
             });
             app.get('/records/edit/:id',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                    host: 'localhost',
-                    database: 'my_project',
-                    password: '8235983451',
-                    port: 5432,
+                    connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
             
                 });
                 client.connect()
@@ -315,11 +305,10 @@ app.get('/list',(request,response)=>{
             })
             app.post('/records/edit/:id',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                    host: 'localhost',
-                    database: 'my_project',
-                    password: '8235983451',
-                    port: 5432,
+                    connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
             
                 });
                 client.connect()
@@ -337,12 +326,10 @@ app.get('/list',(request,response)=>{
             })
             app.get('/appoints/edit/:id',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                    host: 'localhost',
-                    database: 'my_project',
-                    password: '8235983451',
-                    port: 5432,
-            
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: {
+                      rejectUnauthorized: false
+                    }
                 });
                 client.connect()
                 .then(()=>{
@@ -361,11 +348,10 @@ app.get('/list',(request,response)=>{
             })
             app.post('/appoints/edit/:id',(request,response)=>{
                 const client = new Client({
-                    user:'postgres',
-                    host: 'localhost',
-                    database: 'my_project',
-                    password: '8235983451',
-                    port: 5432,
+                    connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
             
                 });
                 client.connect()
@@ -385,11 +371,10 @@ app.get('/list',(request,response)=>{
 		
             try{
                 const client = new Client({
-                         user: 'postgres',
-                           host: 'localhost',
-                           database: 'my_project',
-                           password: '8235983451',
-                           port: 5432
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: {
+                      rejectUnauthorized: false
+                    }
                         });
               client.connect()
                 await JSON.stringify(client.query('SELECT cid FROM "register" WHERE "email"=$1', [req.body.email], function(err, result) {
@@ -421,11 +406,10 @@ app.get('/list',(request,response)=>{
 		
             try{
                 const client = new Client({
-                         user: 'postgres',
-                           host: 'localhost',
-                           database: 'my_project',
-                           password: '8235983451',
-                           port: 5432
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: {
+                      rejectUnauthorized: false
+                    }
                         });
               client.connect()
                 await JSON.stringify(client.query('SELECT cid FROM "register" WHERE "email"=$1', [req.body.email], function(err, result) {
@@ -447,11 +431,10 @@ app.get('/list',(request,response)=>{
 		
             try{
                 const client = new Client({
-                         user: 'postgres',
-                           host: 'localhost',
-                           database: 'my_project',
-                           password: '8235983451',
-                           port: 5432
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: {
+                      rejectUnauthorized: false
+                    }
                         });
               client.connect()
                 await JSON.stringify(client.query('SELECT sid FROM "admin_security" WHERE "security_key"=$1', [req.body.security_key], function(err, result) {
@@ -505,11 +488,10 @@ app.get('/give-ratings',(request,response)=>{
 })
 app.get('/rating',(request,response)=>{
     const client = new Client({
-        user:'postgres',
-        host: 'localhost',
-        database: 'my_project',
-        password: '8235983451',
-        port: 5432,
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
 
     });
     client.connect()
@@ -527,11 +509,10 @@ app.get('/rating',(request,response)=>{
 app.post('/rating/add',(request,response)=>{
     console.log('post body',request.body);
     const client = new Client({
-        user:'postgres',
-        host: 'localhost',
-        database: 'my_project',
-        password: '8235983451',
-        port: 5432,
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     });
     client.connect()
     .then(()=>{
