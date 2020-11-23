@@ -19,7 +19,10 @@ app.use(cookieParser('secret'));
 app.use(session({cookie: { maxAge: 60000 }}));
 app.use(flash());
 
+app.get('/',(request,response)=>{
+    response.render('index');
 
+})
 app.get('/register',(request,response)=>{
     response.render('register');
 
