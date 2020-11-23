@@ -103,7 +103,7 @@ app.get('/add',(request,response)=>{
 app.get('/appointment',(request,response)=>{
     response.render('Appointment time');
 })
-app.get('/appointment-list2',(request,response)=>{
+app.get('/Appointment-list2',(request,response)=>{
     response.render('Appointment list2');
 })
 app.get('/admin-activity',(request,response)=>{
