@@ -79,10 +79,7 @@ app.get('/Custom-modular-Wardrobe',(request,response)=>{
     response.render('Custom Modular Wardrobe');
 
 })
-app.get('/Livspace-homes',(request,response)=>{
-    response.render('Livspace homes');
 
-})
 app.get('/Refer-a-friend',(request,response)=>{
     response.render('Refer a friend');
 
