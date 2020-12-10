@@ -478,7 +478,7 @@ app.get('/give-ratings',(request,response)=>{
     response.render('giveratings');
 
 })
-app.get('/Aspen-L-shaped-Kitchen',(request,response)=>{
+app.get('/kitchen/Aspen-L-shaped-Kitchen',(request,response)=>{
     response.render('Aspen L-shaped Kitchen');
 
 })
