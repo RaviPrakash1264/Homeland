@@ -470,7 +470,7 @@ app.get('/admin',(request,response)=>{
 
 
 app.get('/kitchen/Estelle-L-shaped-Kitchen',(request,response)=>{
-    response.render('Estelle L-shape Kitchen');
+    response.render('Estelle L-shape kitchen');
 
 })
 
