@@ -473,12 +473,13 @@ app.get('/kitchen/Estelle-L-shaped-Kitchen',(request,response)=>{
     response.render('Estelle L-shape Kitchen');
 
 })
-app.get('/kitchen/Estelle-L-shaped-Kitchen',(request,response)=>{
-    response.render('Estelle L-shape Kitchen');
 
-})
 app.get('/give-ratings',(request,response)=>{
     response.render('giveratings');
+
+})
+app.get('/Aspen-L-shaped-Kitchen',(request,response)=>{
+    response.render('Aspen L-shaped Kitchen');
 
 })
 app.get('/rating',(request,response)=>{
